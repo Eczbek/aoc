@@ -1,11 +1,11 @@
+#include <cstddef>
 #include <fstream>
 #include <iostream>
-#include <iterator>
-#include <string_view>
+#include <string>
+#include <xieite/streams/read.hpp>
 
 int main() {
-	std::ifstream reader = std::ifstream("../input.txt");
-	const std::string input = std::string(std::istreambuf_iterator<char>(reader), std::istreambuf_iterator<char>());
+	const std::string input = xieite::streams::read(std::ifstream("../input.txt"));
 	int floor = 0;
 	for (std::size_t i = 0; i < input.size(); ++i) {
 		floor += (input[i] == '(') - (input[i] == ')');
