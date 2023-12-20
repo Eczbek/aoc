@@ -8,8 +8,8 @@
 #include <xieite/strings/split.hpp>
 
 int main() {
-	std::ifstream reader = std::ifstream("../input.txt");
 	int paper = 0;
+	std::ifstream reader = std::ifstream("../input.txt");
 	for (std::string line; std::getline(reader, line);) {
 		std::vector<std::string_view> dimensions = xieite::strings::split(line, 'x');
 		const int w = xieite::math::fromBase(dimensions[0], 10);

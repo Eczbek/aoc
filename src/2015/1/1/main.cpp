@@ -4,7 +4,8 @@
 
 int main() {
 	int floor = 0;
-	for (const char character : xieite::streams::read(std::ifstream("../input.txt"))) {
+	std::ifstream reader = std::ifstream("../input.txt");
+	for (const char character : xieite::streams::read(reader)) {
 		floor += (character == '(') - (character == ')');
 	}
 	std::cout << floor << '\n';
