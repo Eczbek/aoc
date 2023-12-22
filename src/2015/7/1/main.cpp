@@ -1,5 +1,4 @@
 #include <cstdint>
-#include <fstream>
 #include <iostream>
 #include <string>
 #include <string_view>
@@ -66,8 +65,7 @@ struct Wire {
 
 int main() {
 	std::unordered_map<std::string, Wire> wires;
-	std::ifstream reader = std::ifstream("../input.txt");
-	for (std::string line; std::getline(reader, line);) {
+	for (std::string line; std::getline(std::cin, line);) {
 		std::vector<std::string_view> slices = xieite::strings::split(line, ' ');
 		if (slices.size() == 3) { // X -> Y
 			Wire& wire = wires[std::string(slices[2])];

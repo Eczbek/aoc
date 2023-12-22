@@ -1,5 +1,5 @@
-#include <fstream>
 #include <iostream>
+#include <string>
 #include <unordered_map>
 #include <unordered_set>
 #include <xieite/streams/read.hpp>
@@ -12,8 +12,9 @@ int main() {
 	std::unordered_map<int, std::unordered_set<int>> grid { { x1, { y1 } } };
 	int houses = 1;
 	bool toggle = true;
-	std::ifstream reader = std::ifstream("../input.txt");
-	for (const char character : xieite::streams::read(reader)) {
+	std::string input;
+	std::cin >> input;
+	for (const char character : input) {
 		int& x = (toggle ? x1 : x2);
 		int& y = (toggle ? y1 : y2);
 		switch (character) {

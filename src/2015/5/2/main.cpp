@@ -5,8 +5,7 @@
 
 int main() {
 	int nice = 0;
-	std::ifstream reader = std::ifstream("../input.txt");
-	for (std::string line; std::getline(reader, line);) {
+	for (std::string line; std::getline(std::cin, line);) {
 		bool doubles = false;
 		bool repeats = false;
 		for (std::size_t i = 2; i < line.size(); ++i) {

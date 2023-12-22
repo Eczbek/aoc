@@ -1,7 +1,6 @@
 #include <array>
 #include <cmath>
 #include <cstddef>
-#include <fstream>
 #include <iostream>
 #include <string>
 #include <string_view>
@@ -18,8 +17,7 @@ int main() {
 			grid[x][y] = 0;
 		}
 	}
-	std::ifstream reader = std::ifstream("../input.txt");
-	for (std::string line; std::getline(reader, line);) {
+	for (std::string line; std::getline(std::cin, line);) {
 		int action;
 		if (line.starts_with("turn on")) {
 			action = 1;

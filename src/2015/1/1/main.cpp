@@ -1,11 +1,11 @@
-#include <fstream>
 #include <iostream>
-#include <xieite/streams/read.hpp>
+#include <string>
 
 int main() {
 	int floor = 0;
-	std::ifstream reader = std::ifstream("../input.txt");
-	for (const char character : xieite::streams::read(reader)) {
+	std::string input;
+	std::cin >> input;
+	for (const char character : input) {
 		floor += (character == '(') - (character == ')');
 	}
 	std::cout << floor << '\n';

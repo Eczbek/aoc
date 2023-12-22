@@ -1,4 +1,3 @@
-#include <fstream>
 #include <iomanip>
 #include <iostream>
 #include <sstream>
@@ -6,8 +5,7 @@
 
 int main() {
 	int difference = 0;
-	std::ifstream reader = std::ifstream("../input.txt");
-	for (std::string line; std::getline(reader, line);) {
+	for (std::string line; std::getline(std::cin, line);) {
 		std::stringstream quoted;
 		quoted << std::quoted(line);
 		difference += quoted.str().size() - line.size();

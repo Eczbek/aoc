@@ -1,12 +1,10 @@
 #include <cstddef>
-#include <fstream>
 #include <iostream>
 #include <string>
 
 int main() {
 	int nice = 0;
-	std::ifstream reader = std::ifstream("../input.txt");
-	for (std::string line; std::getline(reader, line);) {
+	for (std::string line; std::getline(std::cin, line);) {
 		if (line.contains("ab") || line.contains("cd") || line.contains("pq") || line.contains("xy")) {
 			continue;
 		}

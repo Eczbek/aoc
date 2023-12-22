@@ -1,4 +1,3 @@
-#include <fstream>
 #include <iostream>
 #include <string>
 #include <string_view>
@@ -9,8 +8,7 @@
 
 int main() {
 	int paper = 0;
-	std::ifstream reader = std::ifstream("../input.txt");
-	for (std::string line; std::getline(reader, line);) {
+	for (std::string line; std::getline(std::cin, line);) {
 		std::vector<std::string_view> dimensions = xieite::strings::split(line, 'x');
 		const int w = xieite::math::fromBase(dimensions[0], 10);
 		const int h = xieite::math::fromBase(dimensions[1], 10);
